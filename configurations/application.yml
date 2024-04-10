@@ -1,0 +1,36 @@
+# Kafka Producer Configuration
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+# Kafka Consumer Configuration
+    consumer:
+      bootstrap-servers: localhost:9092
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      
+# Expose all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# If you want to expose only specific endpoints, list them comma-separated, e.g.:
+        #include=health,info,metrics
+
+# Customize the base path for actuator endpoints (default is /actuator)
+      base-path: /management
+
+# Security settings for actuator endpoints (if you have Spring Security on the classpath)
+    health:
+      show-details: always
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
