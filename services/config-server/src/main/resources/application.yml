@@ -1,0 +1,13 @@
+server:
+  port: 8888 # default port for config server
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ilmaoun/3DS_Server.git  # Replace with your Git repository URL
+          searchPaths: configurations  # Points to the 'configurations' directory within the repository
+          cloneOnStart: true  # Optional: Clones the repository at startup
+  application:
+    name: config-server # should match the service-specific config file name in the Git repository
