@@ -10,7 +10,7 @@ spring:
 
 # Kafka Consumer Configuration
     consumer:
-      group-id: request-receiver-group
+      group-id: request-formatter-group
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer

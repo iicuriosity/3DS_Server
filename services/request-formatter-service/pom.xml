@@ -1,10 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>request-receiver-service</artifactId>
+	<artifactId>request-formatter-service</artifactId>
+	<name>request-formatter-service</name>
 	<packaging>jar</packaging>
-	<name>request-receiver-service</name>
+
 	<!-- Inherit shared configurations from the parent -->
 	<parent>
 		<groupId>com.tdsserver</groupId>
@@ -13,22 +14,16 @@
 		<relativePath>../../pom.xml</relativePath> <!-- adjust if necessary -->
 	</parent>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.tdsserver</groupId>
 			<artifactId>tds-entities</artifactId>
 			<version>1.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.tdsserver</groupId>
-			<artifactId>tds-kafka</artifactId>
-			<version>1.0</version>
-		</dependency>
+
 		<!-- Lombok: version is inherited from parent POM -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -65,6 +60,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.tdsserver</groupId>
+			<artifactId>tds-kafka</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
@@ -75,18 +76,5 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-
-		<!-- Add additional dependencies as needed -->
 	</dependencies>
-
-	<build>
-		<plugins>
-			<!-- Spring Boot Maven Plugin for building executable JAR -->
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
 </project>

@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>tds-core</artifactId>
+  <name>tds-core</name>
+  <packaging>jar</packaging>
+  <parent>
+		<groupId>com.tdsserver</groupId>
+		<artifactId>tds-server-parent</artifactId>
+		<version>1.0</version>
+		<relativePath>../../pom.xml</relativePath> <!-- adjust if necessary -->
+	</parent>
+	
+	<dependencies>
+
+		<!-- Lombok: version is inherited from parent POM -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+
+	</dependencies>
+  
+</project>

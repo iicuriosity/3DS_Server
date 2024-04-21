@@ -13,12 +13,22 @@
 		<module>services/request-receiver-service</module>
 		<module>services/config-server</module>
 		<module>services/discovery-server</module>
+		<module>services/request-formatter-service</module>
+		<module>libraries/tds-entities</module>
+		<module>libraries/tds-kafka</module>
+		<module>libraries/tds-core</module>
+		<module>libraries/ul-tools</module>
+		<module>services/visa-ds-service</module>
+		<module>services/test-ds-service</module>
+		<module>services/transaction-state-service</module>
 	</modules>
 
 	<properties>
 		<java.version>17</java.version>
-		<spring-boot.version>3.2.4</spring-boot.version>
+		<spring-boot.version>3.2.5</spring-boot.version>
 		<spring-kafka.version>3.1.3</spring-kafka.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-compiler.version>3.8.1</maven-compiler.version>
 		<!-- Other properties -->
 	</properties>
 
@@ -32,10 +42,35 @@
 				<scope>import</scope>
 			</dependency>
 
+			<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.32</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!--
+			https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>2.17.0</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/net.minidev/json-smart -->
+			<dependency>
+				<groupId>net.minidev</groupId>
+				<artifactId>json-smart</artifactId>
+				<version>2.3</version>
+			</dependency>
+
+
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>2023.0.0</version> <!-- Use the correct Spring Cloud release train version -->
+				<version>2023.0.0</version> <!-- Use the correct Spring Cloud
+				release train version -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -76,7 +111,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.1</version>
+					<version>${maven-compiler.version}</version>
 					<configuration>
 						<release>${java.version}</release>
 					</configuration>

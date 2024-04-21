@@ -1,0 +1,8 @@
+server:
+  port: 0
+  
+spring:
+  application:
+    name: request-formatter-service # should match the service-specific config file name in the Git repository
+  config:
+    import: configserver:http://localhost:8888 # URL of your Config Server
